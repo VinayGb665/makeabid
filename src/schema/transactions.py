@@ -6,7 +6,7 @@ class Transaction(BaseModel):
     id: str
     seller: str
     buyer: str
-    bid_id: str
+    bid_id: Optional[str]
     ref_url: Optional[str] = ""
     note: Optional[str] = ""
     timestamp = datetime.now()
@@ -16,7 +16,7 @@ class Transaction(BaseModel):
 class NewTransaction(BaseModel):
     seller: str
     buyer: str
-    bid_id: str
+    bid_id: Optional[str]
     ref_url: Optional[str] = ""
     note: Optional[str] = ""
     timestamp = datetime.now()

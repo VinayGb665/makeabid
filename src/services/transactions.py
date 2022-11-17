@@ -18,4 +18,6 @@ class TransactionsService(BaseService[Transactions, Any, Any]):
         txn_db_record: Transactions = super().create(txn_obj)
         return Transaction.from_orm(txn_db_record)
     
-    
+def get_transactions_service():
+    session = create_session()
+    return TransactionsService(session)
